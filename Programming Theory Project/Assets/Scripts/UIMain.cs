@@ -5,18 +5,24 @@ using UnityEngine;
 
 public class UIMain : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI tmpScore;
     [SerializeField] private TextMeshProUGUI tmpPlayerName;
+    [SerializeField] private TextMeshProUGUI tmpGameOver;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.Instance != null)
-            tmpPlayerName.text = GameManager.Instance.playerName;
+        tmpPlayerName.text = GameManager.Instance.PlayerName;
+        tmpScore.text = "Score: 0";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetScore(int score)
     {
-        
+        tmpScore.text = "Score: " + score;
+    }
+
+    public void GameOver()
+    {
+        tmpGameOver.gameObject.SetActive(true);
     }
 }
