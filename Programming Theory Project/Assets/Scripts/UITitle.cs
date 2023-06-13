@@ -10,7 +10,7 @@ public class UITitle : MonoBehaviour
 
     public void StartGame(int id)
     {
-        GameManager.Instance.playerName = tmpPlayerName.text;
+        GameManager.Instance.PlayerName = tmpPlayerName.text;
         SceneManager.LoadScene(id);
     }
 }
